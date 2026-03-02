@@ -26,11 +26,11 @@
   },
   "files": [
     "dist",
-    "src/sandboxes/*.wasm",
     "README.md"
   ],
   "scripts": {
     "build": "tsc",
+    "postbuild": "node -e \"require('fs').cpSync('src/sandboxes', 'dist/sandboxes', {recursive: true})\"",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build"
   },
@@ -41,12 +41,12 @@
     "sandbox"
   ],
   "dependencies": {
+    "@capsule-run/cli": "latest",
     "@capsule-run/sdk": "latest",
     "@mastra/core": "latest",
     "zod": "^3.24.0"
   },
   "devDependencies": {
-    "@capsule-run/cli": "latest",
     "mastra": "latest",
     "typescript": "^5.9.0"
   },
