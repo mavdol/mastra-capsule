@@ -6,8 +6,6 @@ Capsule integration for Mastra.
 
 `@capsule-run/mastra` gives Mastra agents the ability to safely execute Python and JavaScript code in an isolated WebAssembly sandbox.
 
-The `.wasm` sandbox files are bundled inside this package — no configuration or network request is necessary.
-
 ## Installation
 
 ```bash
