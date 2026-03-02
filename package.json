@@ -1,0 +1,61 @@
+{
+  "name": "@capsule-run/mastra",
+  "version": "0.1.0",
+  "description": "Mastra integration for Capsule – run untrusted code in isolated WebAssembly sandboxes.",
+  "bugs": {
+    "url": "https://github.com/mavdol/mastra-capsule/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mavdol/mastra-capsule.git"
+  },
+  "homepage": "https://github.com/mavdol/capsule",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tools": {
+      "types": "./dist/tools.d.ts",
+      "import": "./dist/tools.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src/sandboxes/*.wasm",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mastra",
+    "capsule",
+    "webassembly",
+    "sandbox"
+  ],
+  "dependencies": {
+    "@capsule-run/sdk": "latest",
+    "@mastra/core": "latest",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@capsule-run/cli": "latest",
+    "mastra": "latest",
+    "typescript": "^5.9.0"
+  },
+  "peerDependencies": {
+    "@mastra/core": ">=0.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@mastra/core": {
+      "optional": false
+    }
+  }
+}
